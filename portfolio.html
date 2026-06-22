@@ -103,10 +103,13 @@
         }
 
         @keyframes whatsapp-pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 4px 14px rgba(107, 15, 26, 0.25);
             }
+
             50% {
                 transform: scale(1.05);
                 box-shadow: 0 6px 20px rgba(107, 15, 26, 0.4), 0 0 0 6px rgba(107, 15, 26, 0.15);
@@ -129,9 +132,11 @@
             data-purpose="nav-links">
             <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#home">Home</a>
             <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#about">About</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Services</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#services">Services</a>
             <a class="text-brand-gold font-bold transition-colors" href="#">Portfolio</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Packages</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#services">Packages</a>
             <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#contact">Contact</a>
         </div>
         <div data-purpose="nav-cta" class="flex items-center space-x-4">
@@ -154,12 +159,17 @@
     <div id="mobile-menu"
         class="fixed inset-0 z-40 bg-brand-cream/98 transform -translate-y-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-center items-center">
         <div class="flex flex-col items-center space-y-6 text-base font-bold uppercase tracking-widest pt-20">
-            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#home">Home</a>
-            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#about">About</a>
-            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Services</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#home">Home</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#about">About</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#services">Services</a>
             <a class="mobile-nav-link text-brand-gold font-bold transition-colors" href="#">Portfolio</a>
-            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Packages</a>
-            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#contact">Contact</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#services">Packages</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="index.html#contact">Contact</a>
             <a class="mobile-nav-link bg-brand-burgundy text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg mt-4"
                 href="index.html#contact">Book Now</a>
         </div>
@@ -173,7 +183,8 @@
             <h1 class="text-5xl md:text-7xl mb-6 text-brand-charcoal">The Full Portfolio</h1>
             <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
             <p class="text-gray-600 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base">
-                A premium showcase of luxury South Asian bridal makeovers, signature hair designs, and intricate pre-wedding styling crafted by lead artist Feeniya Nizan.
+                A premium showcase of luxury South Asian bridal makeovers, signature hair designs, and intricate
+                pre-wedding styling crafted by lead artist Feeniya Nizan.
             </p>
         </div>
     </section>
@@ -184,15 +195,20 @@
         <div class="container mx-auto px-4 md:px-12">
             <!-- Filter Bar -->
             <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
-                <button class="filter-btn active px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                <button
+                    class="filter-btn active px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
                     data-filter="all">All Artistry</button>
-                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                <button
+                    class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
                     data-filter="makeup">Bridal Makeup</button>
-                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                <button
+                    class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
                     data-filter="hair">Hairstyling</button>
-                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
-                    data-filter="mehndi">Mehndi Art</button>
-                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                <button
+                    class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="styling">Styling</button>
+                <button
+                    class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
                     data-filter="events">Reception & Events</button>
             </div>
 
@@ -204,8 +220,10 @@
                     data-desc="Intricate gold eye detailing and classic bold red lips matching traditional wedding attire.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/5C7A1432.JPG.jpeg" alt="Traditional Royal Bride" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal
+                            Makeup</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Traditional Royal Bride</h3>
                     </div>
                 </div>
@@ -216,8 +234,10 @@
                     data-desc="Flawless HD airbrush makeup with a natural matte finish, showcasing classic South Asian elegance.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/traditional artistry.png" alt="Traditional Artistry" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal
+                            Makeup</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Traditional Artistry</h3>
                     </div>
                 </div>
@@ -228,21 +248,24 @@
                     data-desc="Soft smoky eyes paired with a nude lip, blending contemporary style with tradition.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/immmggg.jpeg" alt="Modern Fusion Bride" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal
+                            Makeup</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Modern Fusion Bride</h3>
                     </div>
                 </div>
 
-                <!-- Item 4: Heritage Bridal Look -->
+                <!-- Item 4: Enchanting Christian Bride -->
                 <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
-                    data-category="makeup" data-title="Heritage Bridal Look"
-                    data-desc="Glowy bronze dewy makeup designed to accentuate features under royal lighting.">
+                    data-category="makeup" data-title="Enchanting Christian Bride"
+                    data-desc="Naturally fresh makeup look with soft waves, showcasing a serene outdoor bridal look.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        src="assets/Our Heritage.png" alt="Heritage Bridal Look" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        src="assets/ch 5.jpeg" alt="Enchanting Christian Bride" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                         <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
-                        <h3 class="text-white text-xl font-playfair font-semibold">Heritage Bridal Look</h3>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Enchanting Christian Bride</h3>
                     </div>
                 </div>
 
@@ -252,8 +275,10 @@
                     data-desc="A sophisticated low bun adorned with fresh jasmine and custom gold hair accessories.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/IMG3.jpeg" alt="Classic Bridal Updo" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span
+                            class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Classic Bridal Updo</h3>
                     </div>
                 </div>
@@ -264,33 +289,24 @@
                     data-desc="A voluminous, modern textured braid detailed with gold-plated hair pins.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/IMG6.jpeg" alt="Textured Bridal Braid" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span
+                            class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Textured Bridal Braid</h3>
                     </div>
                 </div>
 
-                <!-- Item 7: Intricate Bridal Mehndi -->
+                <!-- Item 7: Elegant Bridal Styling -->
                 <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
-                    data-category="mehndi" data-title="Intricate Bridal Mehndi"
-                    data-desc="Fine, detailed traditional patterns gracing the hands, custom designed for the bride.">
+                    data-category="styling" data-title="Elegant Bridal Styling"
+                    data-desc="Bespoke luxury hair styling and custom dupatta draping.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        src="assets/gallary hand.png" alt="Intricate Bridal Mehndi" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Mehndi Art</span>
-                        <h3 class="text-white text-xl font-playfair font-semibold">Intricate Bridal Mehndi</h3>
-                    </div>
-                </div>
-
-                <!-- Item 8: Sangeet Glamour -->
-                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
-                    data-category="events" data-title="Sangeet Glamour"
-                    data-desc="Radiant, shimmering eyes and glass skin finish perfect for evening celebrations.">
-                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        src="assets/IMG4.jpg.jpeg" alt="Sangeet Glamour" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
-                        <h3 class="text-white text-xl font-playfair font-semibold">Sangeet Glamour</h3>
+                        src="assets/gallary hand.png" alt="Elegant Bridal Styling" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Styling</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Elegant Bridal Styling</h3>
                     </div>
                 </div>
 
@@ -300,8 +316,10 @@
                     data-desc="A sophisticated Hollywood wave hair structure paired with a deep berry lip.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/IMG5.jpg.jpeg" alt="Reception Elegance" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception &
+                            Events</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Reception Elegance</h3>
                     </div>
                 </div>
@@ -312,9 +330,89 @@
                     data-desc="Lightweight, fresh, water-resistant makeup with vibrant yellow floral accents.">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/gallary neck.png" alt="Pre-Wedding Glow" />
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception &
+                            Events</span>
                         <h3 class="text-white text-xl font-playfair font-semibold">Pre-Wedding Glow</h3>
+                    </div>
+                </div>
+
+                <!-- Item 11: Traditional South Indian Bride -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Traditional South Indian Bride"
+                    data-desc="Classic bridal look with a radiant base, bold eyes, temple jewelry, and fresh gajra.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/hu1.jpeg" alt="Traditional South Indian Bride" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Traditional South Indian Bride</h3>
+                    </div>
+                </div>
+
+                <!-- Item 12: Christian Bridal Glow -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Christian Bridal Glow"
+                    data-desc="Radiant dew finish makeup with a soft, elegant veil drape for a modern Christian bride.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/ch1.jpeg" alt="Christian Bridal Glow" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Christian Bridal Glow</h3>
+                    </div>
+                </div>
+
+                <!-- Item 13: Christian Bridal Portrait -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Christian Bridal Portrait"
+                    data-desc="Full bridal look featuring a halter neck white gown, pristine makeup, and a long flowy veil.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/ch2.jpeg" alt="Christian Bridal Portrait" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Christian Bridal Portrait</h3>
+                    </div>
+                </div>
+
+                <!-- Item 14: Graceful Christian Bride -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Graceful Christian Bride"
+                    data-desc="Naturally glowing, dewy makeup highlighting the bride's elegant features, paired with a classy lace gown.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/ch3.jpeg" alt="Graceful Christian Bride" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Graceful Christian Bride</h3>
+                    </div>
+                </div>
+
+                <!-- Item 15: Royal Reception Look -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="events" data-title="Royal Reception Look"
+                    data-desc="Shimmering champagne lehenga look with a classic half-up hairstyle and soft warm makeup.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/com.jpeg" alt="Royal Reception Look" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Royal Reception Look</h3>
+                    </div>
+                </div>
+
+                <!-- Item 16: Contemporary Saree Styling -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="events" data-title="Contemporary Saree Styling"
+                    data-desc="Stunning sequin saree draping paired with side-swept hair, adorned with fresh peach roses.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/comen.jpeg" alt="Contemporary Saree Styling" />
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Contemporary Saree Styling</h3>
                     </div>
                 </div>
             </div>
@@ -325,15 +423,21 @@
     <!-- BEGIN: Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-[110] bg-black/95 hidden flex flex-col justify-center items-center p-4">
         <!-- Close Button -->
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gold transition-colors focus:outline-none" aria-label="Close Lightbox">
+        <button id="lightbox-close"
+            class="absolute top-6 right-6 text-white hover:text-brand-gold transition-colors focus:outline-none"
+            aria-label="Close Lightbox">
             <span class="material-symbols-outlined !text-4xl">close</span>
         </button>
 
         <!-- Navigation Buttons -->
-        <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50" aria-label="Previous Image">
+        <button id="lightbox-prev"
+            class="absolute left-4 md:left-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50"
+            aria-label="Previous Image">
             <span class="material-symbols-outlined !text-3xl md:!text-5xl">chevron_left</span>
         </button>
-        <button id="lightbox-next" class="absolute right-4 md:right-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50" aria-label="Next Image">
+        <button id="lightbox-next"
+            class="absolute right-4 md:right-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50"
+            aria-label="Next Image">
             <span class="material-symbols-outlined !text-3xl md:!text-5xl">chevron_right</span>
         </button>
 
@@ -344,7 +448,8 @@
 
         <!-- Text/Metadata Info -->
         <div class="mt-8 text-center max-w-2xl px-4">
-            <span id="lightbox-category" class="text-brand-gold text-xs uppercase tracking-widest font-bold block mb-2"></span>
+            <span id="lightbox-category"
+                class="text-brand-gold text-xs uppercase tracking-widest font-bold block mb-2"></span>
             <h2 id="lightbox-title" class="text-white text-2xl md:text-3xl font-playfair mb-3"></h2>
             <p id="lightbox-desc" class="text-gray-300 text-sm md:text-base font-light leading-relaxed"></p>
         </div>
@@ -356,7 +461,8 @@
         <div class="container mx-auto px-4 md:px-12">
             <h2 class="text-4xl md:text-5xl mb-6 font-playfair">Ready to Define Your Signature Look?</h2>
             <p class="text-brand-gold/80 text-sm md:text-base max-w-xl mx-auto mb-10 font-light leading-relaxed">
-                Connect with Feeniya Nizan today to secure your wedding or celebration date. Let us bring your dream bridal vision to life.
+                Connect with Feeniya Nizan today to secure your wedding or celebration date. Let us bring your dream
+                bridal vision to life.
             </p>
             <a class="bg-brand-gold text-brand-burgundy hover:bg-white hover:text-brand-burgundy px-12 py-4 text-xs font-bold uppercase tracking-widest transition shadow-xl inline-block"
                 href="index.html#contact">Book Your Consultation</a>
@@ -367,7 +473,8 @@
     <!-- BEGIN: Footer -->
     <footer class="bg-brand-burgundy text-white pt-12 md:pt-20 pb-12 border-t border-white/5">
         <div class="container mx-auto px-4 md:px-12">
-            <div class="flex flex-col md:flex-row items-center justify-between text-[0.65rem] text-gray-400 font-medium tracking-widest">
+            <div
+                class="flex flex-col md:flex-row items-center justify-between text-[0.65rem] text-gray-400 font-medium tracking-widest">
                 <p class="">© 2024 TEAM N BY FEENIYA NIZAN. ALL RIGHTS RESERVED.</p>
                 <div class="flex space-x-8 mt-6 md:mt-0">
                     <a class="hover:text-brand-gold transition-colors uppercase" href="index.html#home">Home</a>
@@ -546,10 +653,8 @@
             }
         });
     </script>
-    <a aria-label="Chat on WhatsApp"
-        class="whatsapp-float"
-        href="https://wa.me/919645424281" target="_blank"><svg class="w-7 h-7 fill-white" viewbox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
+    <a aria-label="Chat on WhatsApp" class="whatsapp-float" href="https://wa.me/919645424281" target="_blank"><svg
+            class="w-7 h-7 fill-white" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
             </path>
