@@ -93,6 +93,58 @@
         .sepia-tint {
             filter: grayscale(100%) sepia(50%) hue-rotate(-20deg) saturate(150%) contrast(1.1);
         }
+
+        /* Custom Premium WhatsApp Button Styling */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: #6B0F1A;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(107, 15, 26, 0.25);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            animation: whatsapp-pulse 4s infinite ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            background-color: #25D366;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+            animation: none;
+        }
+
+        @keyframes whatsapp-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 14px rgba(107, 15, 26, 0.25);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(107, 15, 26, 0.4), 0 0 0 6px rgba(107, 15, 26, 0.15);
+            }
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
     <!-- Configuration -->
     <script src="config.js"></script>
@@ -103,71 +155,117 @@
     <nav class="fixed top-0 left-0 w-full z-50 py-6 md:py-7 px-4 md:px-12 flex justify-between items-center transition-all duration-300"
         data-purpose="main-header" id="main-nav">
         <div class="flex items-center" data-purpose="logo-container">
-            <a href="#" class="flex items-center">
+            <a href="#home" class="flex items-center">
                 <img src="assets/logo-D8HQiwI_.png" alt="TEAM N MAKEOVERS Logo"
                     class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
             </a>
         </div>
         <div class="hidden lg:flex items-center space-x-8 text-[0.7rem] font-bold uppercase tracking-widest"
             data-purpose="nav-links">
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">Home</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">About</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">Services</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">Portfolio</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">Packages</a>
-            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#">Contact</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#home">Home</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#about">About</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#services">Services</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#portfolio">Portfolio</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#services">Packages</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="#contact">Contact</a>
         </div>
-        <div data-purpose="nav-cta">
-            <a class="bg-brand-burgundy text-white px-8 py-3 text-[0.7rem] font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg"
-                href="#">Book Now</a>
+        <div data-purpose="nav-cta" class="flex items-center space-x-4">
+            <a class="bg-brand-burgundy text-white px-6 md:px-8 py-2.5 md:py-3 text-[0.65rem] md:text-[0.7rem] font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg"
+                href="#contact">Book Now</a>
+            <button id="mobile-menu-btn"
+                class="lg:hidden text-brand-charcoal hover:text-brand-gold focus:outline-none z-50"
+                aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="hamburger-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </nav>
     <!-- END: Navigation -->
+
+    <!-- BEGIN: Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-brand-cream/98 transform -translate-y-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-center items-center">
+        <div class="flex flex-col items-center space-y-6 text-base font-bold uppercase tracking-widest pt-20">
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="#home">Home</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="#about">About</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="#services">Services</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="#portfolio">Portfolio</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="#services">Packages</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors"
+                href="#contact">Contact</a>
+            <a class="mobile-nav-link bg-brand-burgundy text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg mt-4"
+                href="#contact">Book Now</a>
+        </div>
+    </div>
+    <!-- END: Mobile Menu Overlay -->
+
     <!-- BEGIN: Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-20 lg:flex-row bg-brand-cream"
+    <section id="home"
+        class="relative min-h-screen flex items-center justify-center lg:justify-start bg-brand-cream pt-20 lg:pt-28"
         data-purpose="hero-section">
-        <div class="absolute right-0 top-0 h-full w-full lg:w-7/12 z-0">
-            <!-- Smooth gradient fade: fades out by 30% width on desktop, and by 40% height on mobile to keep the face 100% clear -->
+        <!-- Background Image Container -->
+        <div class="absolute inset-0 w-full h-full lg:left-auto lg:right-0 lg:w-7/12 z-0">
+            <!-- Overlay for Mobile (gradient to keep image visible but text extremely readable) -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 lg:hidden z-10"></div>
+            <!-- Smooth gradient fade for Desktop -->
             <div
                 class="absolute inset-0 bg-gradient-to-r from-brand-cream via-brand-cream/0 via-[30%] to-transparent z-10 lg:block hidden">
-            </div>
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-brand-cream via-brand-cream/0 via-[40%] to-transparent z-10 lg:hidden block">
             </div>
             <img alt="Luxury South Asian Bride" class="w-full h-full object-cover object-top"
                 src="assets/IMGHERO.png" />
         </div>
-        <div class="container mx-auto px-4 md:px-12 relative z-10 grid lg:grid-cols-2">
-            <div class="max-w-2xl reveal active">
-                <p class="text-brand-darkGold font-bold text-[0.75rem] tracking-[0.3em] uppercase mb-6">Your Beauty,
-                    Perfectly Defined</p>
-                <h1 class="text-5xl md:text-8xl mb-8 leading-[1.1] text-brand-charcoal">Redefining Bridal Beauty With
-                    Elegance</h1>
-                <p class="text-gray-600 mb-10 leading-relaxed text-base max-w-md font-light">Bespoke luxury bridal
-                    makeup and hairstyling designed for your most cherished South Asian traditions.</p>
-                <div class="flex flex-wrap items-center gap-6 mb-16">
-                    <a class="bg-brand-burgundy text-white px-10 py-4 text-[0.75rem] uppercase tracking-[0.2em] font-bold hover:bg-opacity-90 transition-all shadow-xl"
-                        href="#">Inquire Now</a>
-                    <button
-                        class="flex items-center space-x-3 text-[0.75rem] font-bold uppercase tracking-widest group text-brand-charcoal">
+
+        <!-- Content Container -->
+        <div class="container mx-auto px-6 md:px-12 relative z-20 grid lg:grid-cols-2 py-20 lg:py-0">
+            <div class="max-w-2xl reveal active text-center lg:text-left flex flex-col items-center lg:items-start">
+                <p
+                    class="text-brand-gold font-bold text-[0.75rem] md:text-[0.8rem] tracking-[0.3em] uppercase mb-4 lg:mb-6 lg:hidden">
+                    Your Beauty, Perfectly Defined</p>
+                <h1
+                    class="text-white lg:text-brand-charcoal text-4xl sm:text-5xl md:text-6xl lg:text-8xl mb-6 lg:mb-8 leading-[1.2] lg:leading-[1.1] font-playfair font-normal">
+                    Redefining Bridal Beauty With Elegance
+                </h1>
+                <p
+                    class="text-gray-200 lg:text-gray-600 mb-8 lg:mb-10 leading-relaxed text-sm md:text-base max-w-md font-light">
+                    Bespoke luxury bridal makeup and hairstyling designed for your most cherished South Asian
+                    traditions.
+                </p>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-12 lg:mb-16">
+                    <a class="bg-brand-burgundy text-white px-8 md:px-10 py-3.5 md:py-4 text-[0.7rem] md:text-[0.75rem] uppercase tracking-[0.2em] font-bold hover:bg-opacity-90 transition-all shadow-xl"
+                        href="#contact">Inquire Now</a>
+                    <a href="#about"
+                        class="flex items-center space-x-3 text-[0.7rem] md:text-[0.75rem] font-bold uppercase tracking-widest group text-white lg:text-brand-charcoal">
                         <span
-                            class="w-12 h-12 rounded-full border border-brand-gold flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all duration-300">
-                            <svg class="h-4 w-4 fill-current" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-brand-gold flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 bg-white/10 lg:bg-transparent">
+                            <svg class="h-3.5 w-3.5 md:h-4 md:w-4 fill-brand-gold lg:fill-current" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6 4l10 6-10 6V4z"></path>
                             </svg>
                         </span>
-                        <span class="">The Experience</span>
-                    </button>
+                        <span>The Experience</span>
+                    </a>
                 </div>
-                <div class="flex space-x-16 pt-8 border-t border-gray-200">
+                <div
+                    class="flex space-x-12 md:space-x-16 pt-8 border-t border-white/20 lg:border-gray-200 w-full lg:w-auto justify-center lg:justify-start">
                     <div>
-                        <span class="block text-3xl font-bold font-playfair text-brand-charcoal">10+ Years</span>
                         <span
-                            class="block text-[0.65rem] uppercase tracking-widest text-gray-500 mt-1">Excellence</span>
+                            class="block text-2xl md:text-3xl font-bold font-playfair text-white lg:text-brand-charcoal">10+
+                            Years</span>
+                        <span
+                            class="block text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest text-gray-300 lg:text-gray-500 mt-1">Excellence</span>
                     </div>
                     <div>
-                        <span class="block text-3xl font-bold font-playfair text-brand-charcoal">1000+</span>
-                        <span class="block text-[0.65rem] uppercase tracking-widest text-gray-500 mt-1">Happy
+                        <span
+                            class="block text-2xl md:text-3xl font-bold font-playfair text-white lg:text-brand-charcoal">1000+</span>
+                        <span
+                            class="block text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest text-gray-300 lg:text-gray-500 mt-1">Happy
                             Brides</span>
                     </div>
                 </div>
@@ -176,9 +274,10 @@
     </section>
     <!-- END: Hero Section -->
     <!-- BEGIN: Portfolio Gallery Section -->
-    <section class="py-32 bg-white overflow-hidden" data-purpose="portfolio-section">
+    <section id="portfolio" class="py-16 md:py-32 bg-white overflow-hidden" data-purpose="portfolio-section">
         <div class="container mx-auto px-4 md:px-12">
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 reveal active">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-20 reveal active">
                 <div class="max-w-xl">
                     <p class="text-brand-darkGold font-bold text-[0.75rem] tracking-[0.3em] uppercase mb-4">The Gallery
                     </p>
@@ -187,7 +286,7 @@
                 </div>
                 <div class="mt-8 lg:mt-0">
                     <a class="text-[0.85rem] uppercase tracking-[0.2em] font-semibold text-brand-charcoal border-b-2 border-brand-gold pb-2 hover:text-brand-gold transition-colors flex items-center"
-                        href="#">
+                        href="portfolio.html">
                         View Full Portfolio <svg class="h-5 w-5 ml-3" fill="none" stroke="currentColor"
                             viewbox="0 0 24 24">
                             <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"
@@ -196,28 +295,70 @@
                     </a>
                 </div>
             </div>
-            <!-- Asymmetric Mosaic Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal active">
-                <!-- Large Main Item -->
-                <div class="md:col-span-5 mosaic-item h-[600px] shadow-2xl">
-                    <img alt="Bridal Hair Detail" class="w-full h-full object-cover"
+            <!-- Responsive Gallery Container -->
+            <!-- Mobile/Tablet: Horizontal scrollable swipeable carousel. Desktop: Asymmetric Mosaic Grid. -->
+            <div
+                class="flex overflow-x-auto md:grid md:grid-cols-12 gap-6 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 md:mx-0 md:px-0 reveal active">
+
+                <!-- Card 1: Traditional Artistry -->
+                <div
+                    class="w-[85vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink-1 md:snap-align-none md:col-span-5 mosaic-item h-[380px] md:h-[600px] shadow-2xl relative group rounded-sm overflow-hidden">
+                    <img alt="Traditional Artistry"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="assets/traditional artistry.png" />
+                    <!-- Label Overlay: always visible on mobile, hover-only on desktop -->
                     <div
-                        class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-end p-8">
-                        <p class="text-white text-xs uppercase tracking-widest font-semibold">Traditional Artistry</p>
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal
+                            Makeup</span>
+                        <h3 class="text-white text-lg font-playfair font-medium">Traditional Artistry</h3>
                     </div>
                 </div>
-                <div class="md:col-span-7 grid grid-cols-2 gap-6">
-                    <div class="mosaic-item h-[288px] shadow-xl">
-                        <img alt="Modern Fusion Bridal" class="w-full h-full object-cover" src="assets/immmggg.jpeg" />
+
+                <!-- Sub Grid Wrapper (flex container on mobile, subgrid container on desktop) -->
+                <div class="flex gap-6 md:grid md:grid-cols-2 md:gap-6 md:col-span-7 shrink-0 md:shrink-1">
+
+                    <!-- Card 2: Modern Fusion Bridal -->
+                    <div
+                        class="w-[85vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink-1 md:snap-align-none mosaic-item h-[380px] md:h-[288px] shadow-xl relative group rounded-sm overflow-hidden">
+                        <img alt="Modern Fusion Bridal"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="assets/immmggg.jpeg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal
+                                Makeup</span>
+                            <h3 class="text-white text-lg font-playfair font-medium">Modern Fusion</h3>
+                        </div>
                     </div>
-                    <div class="mosaic-item h-[288px] shadow-xl">
-                        <img alt="Intricate Henna Art" class="w-full h-full object-cover"
+
+                    <!-- Card 3: Intricate Henna Art -->
+                    <div
+                        class="w-[85vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink-1 md:snap-align-none mosaic-item h-[380px] md:h-[288px] shadow-xl relative group rounded-sm overflow-hidden">
+                        <img alt="Intricate Henna Art"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPO191ihHdMWKZ7nVWXrxSwlRCz4YewrLNhuYKlp_uo7NhMVSzf-TUxPQm8bGqL9Pb9geEiahA_it_Suel1UhvCvyjfsr1yXp8TMqQwagJMouLzzD0l0X5hReupr97YlZuWCNxi6WrI9ambHBRRZFy4Bjth8LighiPUL_n52IkudQTnInU89elLeaAqyWIkXdHsFFHxn9Ep_7qTJt51U2OLBgSzxeTI2RhsMjx7FhuizCWuNNXLgImF7qHwWX2JPdAGLN1uJDYYYA" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Mehndi
+                                Art</span>
+                            <h3 class="text-white text-lg font-playfair font-medium">Intricate Henna</h3>
+                        </div>
                     </div>
-                    <div class="col-span-2 mosaic-item h-[288px] shadow-xl">
-                        <img alt="Luxury Jewelry Detail" class="w-full h-full object-cover"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgVPuGBpT_OlZaQNZgnVuMq7LmaCoEcbXbsxtfkknyQdtGygod4kE9IP2dF-lzZJkxW-kaHnW3rNXW9js3wM3iZtiwfzsFMrKWbCySJFvjVAkYhbQg7Vcx5GSRxb_JjrX4v4Pnv_UxBLtuRxekW0kVsnhxNcxFnGk4w_Y6X34ybFAUWc1U9__XMsz3xB8ixYAh8TqAkkOma1zjoIrmPgmkInFL32HFb1NyMpexDxMTo2OubUQyssDoapI4XKidpCh-Rr2fl13VP_w" />
+
+                    <!-- Card 4: Luxury Jewelry Detail -->
+                    <div
+                        class="w-[85vw] max-w-[320px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink-1 md:snap-align-none md:col-span-2 mosaic-item h-[380px] md:h-[288px] shadow-xl relative group rounded-sm overflow-hidden">
+                        <img alt="Luxury Jewelry Detail"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="assets/gallary neck.png" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span
+                                class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception
+                                & Details</span>
+                            <h3 class="text-white text-lg font-playfair font-medium">Bridal Details</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -225,7 +366,7 @@
     </section>
     <!-- END: Portfolio Section -->
     <!-- BEGIN: Services Section -->
-    <section class="py-32 bg-brand-cream" data-purpose="services-section">
+    <section id="services" class="py-16 md:py-32 bg-brand-cream" data-purpose="services-section">
         <div class="container mx-auto px-4 md:px-12 text-center">
             <div class="reveal active">
                 <p class="text-brand-darkGold font-bold text-[0.75rem] tracking-[0.3em] uppercase mb-4">Our Services</p>
@@ -246,7 +387,7 @@
                         href="#">Explore Details</a>
                 </div>
                 <!-- Service Card 2 (Center Featured) -->
-                <div class="bg-white p-12 flex flex-col items-center text-center shadow-2xl ring-2 ring-brand-gold scale-105 z-10 reveal group active"
+                <div class="bg-white p-12 flex flex-col items-center text-center shadow-2xl ring-2 ring-brand-gold lg:scale-105 z-10 reveal group active"
                     data-purpose="service-card">
                     <div
                         class="absolute -top-4 bg-brand-gold text-white text-[0.6rem] px-4 py-1 tracking-[0.2em] font-bold uppercase">
@@ -278,48 +419,62 @@
     </section>
     <!-- END: Services Section -->
     <!-- BEGIN: About Us Section -->
-    <section class="py-32 bg-white" data-purpose="about-section">
+    <section id="about" class="py-16 md:py-32 bg-white" data-purpose="about-section">
         <div class="container mx-auto px-4 md:px-12">
-            <div class="flex flex-col lg:flex-row items-center gap-20">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <!-- About Image -->
                 <div class="w-full lg:w-1/2 relative reveal active" data-purpose="about-image-container">
-                    <img alt="Our Lead Stylist Nikita" class="w-full shadow-2xl transition-all duration-700"
-                        src="assets/IMG6.jpeg" style="filter: sepia(0.3) contrast(1.1) brightness(0.95);" />
+                    <div class="relative max-w-md mx-auto lg:max-w-none">
+                        <!-- Gold decorative frame -->
+                        <div class="absolute -bottom-3 -right-3 top-3 left-3 border border-brand-gold z-0"></div>
+                        <img alt="Our Lead Stylist Feeniya Nizan"
+                            class="w-full shadow-2xl transition-all duration-700 relative z-10"
+                            src="assets/1A8A2981.JPG.jpeg" style="filter: sepia(0.3) contrast(1.1) brightness(0.95);" />
+                    </div>
                 </div>
                 <!-- About Content -->
                 <div class="w-full lg:w-1/2 reveal active">
                     <p class="text-brand-darkGold font-bold text-[0.75rem] tracking-[0.3em] uppercase mb-4">Our Heritage
                     </p>
-                    <h2 class="text-6xl mb-8 leading-tight text-brand-charcoal">Where Passion <br /> Meets Perfection
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl mb-8 leading-tight text-brand-charcoal">Where Passion
+                        <br class="hidden lg:inline" /> Meets Perfection
                     </h2>
                     <div class="text-gray-600 space-y-6 mb-12 font-light leading-loose">
-                        <p class="">At Team N, led by Nikita, we understand that bridal beauty is more than just makeup;
+                        <p class="">At Team N, led by Feeniya Nizan, we understand that bridal beauty is more than just
+                            makeup;
                             it's the culmination of heritage, personality, and dreams. We specialize in luxury South
                             Asian bridal looks that bridge the gap between timeless tradition and contemporary elegance.
                         </p>
                     </div>
                     <!-- Testimonial Block -->
-                    <div class="mb-12 bg-brand-cream p-8 border-l-4 border-brand-gold italic">
+                    <div class="mb-12 bg-brand-cream p-6 md:p-8 border-l-4 border-brand-gold italic">
                         <div class="text-brand-gold text-lg mb-4">★★★★★</div>
-                        <p class="text-brand-charcoal text-sm leading-relaxed mb-4">"Nikita and her team turned my
+                        <p class="text-brand-charcoal text-sm leading-relaxed mb-4">"Feeniya Nizan and her team turned
+                            my
                             vision into reality. Every detail of my look for the Phere was absolute perfection. I felt
                             like royalty."</p>
                         <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">— Ananya R., Bride
                             2023</span>
                     </div>
                     <div
-                        class="grid grid-cols-3 gap-8 mb-12 py-8 border-gray-100 bg-[#fdfcfb] border border-[#d4af37] p-8">
+                        class="grid grid-cols-3 gap-4 sm:gap-8 mb-12 py-8 border-gray-100 bg-[#fdfcfb] border border-[#d4af37] p-4 sm:p-8">
                         <div class="text-center md:text-left">
-                            <span class="block text-4xl font-playfair font-bold text-brand-charcoal">10+</span>
-                            <span class="text-[0.6rem] uppercase tracking-widest text-gray-400 font-bold">Years</span>
+                            <span
+                                class="block text-3xl sm:text-4xl font-playfair font-bold text-brand-charcoal">10+</span>
+                            <span
+                                class="text-[0.65rem] sm:text-xs uppercase tracking-widest text-gray-400 font-bold">Years</span>
                         </div>
-                        <div class="text-center md:text-left border-x border-gray-100 px-8">
-                            <span class="block text-4xl font-playfair font-bold text-brand-charcoal">1k+</span>
-                            <span class="text-[0.6rem] uppercase tracking-widest text-gray-400 font-bold">Brides</span>
+                        <div class="text-center md:text-left border-x border-gray-100 px-2 sm:px-8">
+                            <span
+                                class="block text-3xl sm:text-4xl font-playfair font-bold text-brand-charcoal">1k+</span>
+                            <span
+                                class="text-[0.65rem] sm:text-xs uppercase tracking-widest text-gray-400 font-bold">Brides</span>
                         </div>
                         <div class="text-center md:text-left">
-                            <span class="block text-4xl font-playfair font-bold text-brand-charcoal">99%</span>
-                            <span class="text-[0.6rem] uppercase tracking-widest text-gray-400 font-bold">Success</span>
+                            <span
+                                class="block text-3xl sm:text-4xl font-playfair font-bold text-brand-charcoal">99%</span>
+                            <span
+                                class="text-[0.65rem] sm:text-xs uppercase tracking-widest text-gray-400 font-bold">Success</span>
                         </div>
                     </div>
                     <a class="inline-block border-2 border-brand-burgundy text-brand-burgundy px-12 py-4 text-[0.75rem] uppercase tracking-[0.2em] font-bold hover:bg-brand-burgundy hover:text-white transition-all duration-300"
@@ -330,7 +485,7 @@
     </section>
     <!-- END: About Us Section -->
     <!-- BEGIN: Footer -->
-    <section class="py-32 bg-[#FAF9F6]" data-purpose="contact-section">
+    <section id="contact" class="py-16 md:py-32 bg-[#FAF9F6]" data-purpose="contact-section">
         <div class="container mx-auto px-4 md:px-12">
             <div class="grid lg:grid-cols-2 gap-20">
                 <div class="reveal active">
@@ -341,14 +496,15 @@
                             <span class="material-symbols-outlined text-brand-gold">location_on</span>
                             <div>
                                 <p class="font-bold uppercase tracking-widest text-xs mb-1">Location</p>
-                                <p class="text-gray-600">New Delhi, India | Destination Weddings Worldwide</p>
+                                <p class="text-gray-600">Kozhikode, Kerala, India | Destination Weddings Worldwide</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <span class="material-symbols-outlined text-brand-gold">call</span>
                             <div>
                                 <p class="font-bold uppercase tracking-widest text-xs mb-1">Phone</p>
-                                <p class="text-gray-600">+91 98765 43210</p>
+                                <p class="text-gray-600"><a href="tel:+919645424281"
+                                        class="hover:text-brand-gold transition-colors">+91 96454 24281</a></p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
@@ -402,7 +558,7 @@
             </div>
         </div>
     </section>
-    <footer class="bg-brand-burgundy text-white pt-32 pb-12" data-purpose="main-footer">
+    <footer class="bg-brand-burgundy text-white pt-16 md:pt-32 pb-12" data-purpose="main-footer">
         <div class="container mx-auto px-4 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-24">
                 <!-- Brand Info -->
@@ -462,7 +618,7 @@
             <!-- Footer Bottom -->
             <div
                 class="border-t border-brand-gold/10 pt-10 flex flex-col md:flex-row items-center justify-between text-[0.65rem] text-gray-400 font-medium tracking-widest">
-                <p class="">© 2024 TEAM N BY NIKITA. ALL RIGHTS RESERVED.</p>
+                <p class="">© 2024 TEAM N BY FEENIYA NIZAN. ALL RIGHTS RESERVED.</p>
                 <div class="flex space-x-8 mt-6 md:mt-0">
                     <a class="hover:text-brand-gold transition-colors uppercase" href="#">Privacy</a>
                     <a class="hover:text-brand-gold transition-colors uppercase" href="#">Terms</a>
@@ -500,6 +656,39 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIconPath = document.getElementById('hamburger-icon-path');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-y-0');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-y-0');
+                mobileMenu.classList.add('-translate-y-full');
+                hamburgerIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
+                hamburgerIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('translate-y-0')) {
+                    toggleMenu();
+                }
+            });
+        });
 
         // Form Submission Logic (Google Sheets & Mail)
         const contactForm = document.getElementById('contact-form');
@@ -575,10 +764,8 @@
             }
         });
     </script>
-    <a aria-label="Chat on WhatsApp"
-        class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-brand-burgundy rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
-        href="https://wa.me/yournumber" target="_blank"><svg class="w-7 h-7 fill-white" viewbox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
+    <a aria-label="Chat on WhatsApp" class="whatsapp-float" href="https://wa.me/919645424281" target="_blank"><svg
+            class="w-7 h-7 fill-white" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
             </path>

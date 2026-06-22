@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png" href="assets/logo-D8HQiwI_.png" />
+    <title>Portfolio | Team N | Luxury South Asian Bridal Experience</title>
+    <!-- Google Fonts: Playfair Display & Montserrat -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            burgundy: '#4D0F1F',
+                            gold: '#D4AF37',
+                            darkGold: '#8C6D1F',
+                            cream: '#FAF9F6',
+                            charcoal: '#333333',
+                        }
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FAF9F6;
+            color: #333333;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-scrolled {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .filter-btn.active {
+            background-color: #4D0F1F;
+            color: white;
+            border-color: #4D0F1F;
+        }
+
+        /* Custom Premium WhatsApp Button Styling */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: #6B0F1A;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(107, 15, 26, 0.25);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            animation: whatsapp-pulse 4s infinite ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            background-color: #25D366;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+            animation: none;
+        }
+
+        @keyframes whatsapp-pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 14px rgba(107, 15, 26, 0.25);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(107, 15, 26, 0.4), 0 0 0 6px rgba(107, 15, 26, 0.15);
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- BEGIN: Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 py-6 md:py-7 px-4 md:px-12 flex justify-between items-center transition-all duration-300"
+        data-purpose="main-header" id="main-nav">
+        <div class="flex items-center" data-purpose="logo-container">
+            <a href="index.html#home" class="flex items-center">
+                <img src="assets/logo-D8HQiwI_.png" alt="TEAM N MAKEOVERS Logo"
+                    class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+            </a>
+        </div>
+        <div class="hidden lg:flex items-center space-x-8 text-[0.7rem] font-bold uppercase tracking-widest"
+            data-purpose="nav-links">
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#home">Home</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#about">About</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Services</a>
+            <a class="text-brand-gold font-bold transition-colors" href="#">Portfolio</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Packages</a>
+            <a class="text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#contact">Contact</a>
+        </div>
+        <div data-purpose="nav-cta" class="flex items-center space-x-4">
+            <a class="bg-brand-burgundy text-white px-6 md:px-8 py-2.5 md:py-3 text-[0.65rem] md:text-[0.7rem] font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg"
+                href="index.html#contact">Book Now</a>
+            <button id="mobile-menu-btn"
+                class="lg:hidden text-brand-charcoal hover:text-brand-gold focus:outline-none z-50"
+                aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="hamburger-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- END: Navigation -->
+
+    <!-- BEGIN: Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-brand-cream/98 transform -translate-y-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-center items-center">
+        <div class="flex flex-col items-center space-y-6 text-base font-bold uppercase tracking-widest pt-20">
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#home">Home</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#about">About</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Services</a>
+            <a class="mobile-nav-link text-brand-gold font-bold transition-colors" href="#">Portfolio</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#services">Packages</a>
+            <a class="mobile-nav-link text-brand-charcoal hover:text-brand-gold transition-colors" href="index.html#contact">Contact</a>
+            <a class="mobile-nav-link bg-brand-burgundy text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg mt-4"
+                href="index.html#contact">Book Now</a>
+        </div>
+    </div>
+    <!-- END: Mobile Menu Overlay -->
+
+    <!-- BEGIN: Header Section -->
+    <section class="pt-32 md:pt-40 pb-12 md:pb-20 bg-brand-cream border-b border-gray-100 text-center">
+        <div class="container mx-auto px-4 md:px-12">
+            <p class="text-brand-darkGold font-bold text-[0.75rem] tracking-[0.3em] uppercase mb-4">Artistic Gallery</p>
+            <h1 class="text-5xl md:text-7xl mb-6 text-brand-charcoal">The Full Portfolio</h1>
+            <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base">
+                A premium showcase of luxury South Asian bridal makeovers, signature hair designs, and intricate pre-wedding styling crafted by lead artist Feeniya Nizan.
+            </p>
+        </div>
+    </section>
+    <!-- END: Header Section -->
+
+    <!-- BEGIN: Gallery & Filters Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-12">
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
+                <button class="filter-btn active px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="all">All Artistry</button>
+                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="makeup">Bridal Makeup</button>
+                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="hair">Hairstyling</button>
+                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="mehndi">Mehndi Art</button>
+                <button class="filter-btn px-6 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 hover:border-brand-burgundy transition-all duration-300 rounded-none"
+                    data-filter="events">Reception & Events</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1: Traditional Royal Bride -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Traditional Royal Bride"
+                    data-desc="Intricate gold eye detailing and classic bold red lips matching traditional wedding attire.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/5C7A1432.JPG.jpeg" alt="Traditional Royal Bride" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Traditional Royal Bride</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2: Traditional Artistry -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Traditional Artistry"
+                    data-desc="Flawless HD airbrush makeup with a natural matte finish, showcasing classic South Asian elegance.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/traditional artistry.png" alt="Traditional Artistry" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Traditional Artistry</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3: Modern Fusion Bride -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Modern Fusion Bride"
+                    data-desc="Soft smoky eyes paired with a nude lip, blending contemporary style with tradition.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/immmggg.jpeg" alt="Modern Fusion Bride" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Modern Fusion Bride</h3>
+                    </div>
+                </div>
+
+                <!-- Item 4: Heritage Bridal Look -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="makeup" data-title="Heritage Bridal Look"
+                    data-desc="Glowy bronze dewy makeup designed to accentuate features under royal lighting.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/Our Heritage.png" alt="Heritage Bridal Look" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Bridal Makeup</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Heritage Bridal Look</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5: Classic Bridal Updo -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="hair" data-title="Classic Bridal Updo"
+                    data-desc="A sophisticated low bun adorned with fresh jasmine and custom gold hair accessories.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/IMG3.jpeg" alt="Classic Bridal Updo" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Classic Bridal Updo</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6: Textured Bridal Braid -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="hair" data-title="Textured Bridal Braid"
+                    data-desc="A voluminous, modern textured braid detailed with gold-plated hair pins.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/IMG6.jpeg" alt="Textured Bridal Braid" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Hairstyling</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Textured Bridal Braid</h3>
+                    </div>
+                </div>
+
+                <!-- Item 7: Intricate Bridal Mehndi -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="mehndi" data-title="Intricate Bridal Mehndi"
+                    data-desc="Fine, detailed traditional patterns gracing the hands, custom designed for the bride.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/gallary hand.png" alt="Intricate Bridal Mehndi" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Mehndi Art</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Intricate Bridal Mehndi</h3>
+                    </div>
+                </div>
+
+                <!-- Item 8: Sangeet Glamour -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="events" data-title="Sangeet Glamour"
+                    data-desc="Radiant, shimmering eyes and glass skin finish perfect for evening celebrations.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/IMG4.jpg.jpeg" alt="Sangeet Glamour" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Sangeet Glamour</h3>
+                    </div>
+                </div>
+
+                <!-- Item 9: Reception Elegance -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="events" data-title="Reception Elegance"
+                    data-desc="A sophisticated Hollywood wave hair structure paired with a deep berry lip.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/IMG5.jpg.jpeg" alt="Reception Elegance" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Reception Elegance</h3>
+                    </div>
+                </div>
+
+                <!-- Item 10: Haldi & Pre-Wedding Joy -->
+                <div class="gallery-item relative group cursor-pointer overflow-hidden shadow-md aspect-[4/5] bg-brand-cream"
+                    data-category="events" data-title="Pre-Wedding Glow"
+                    data-desc="Lightweight, fresh, water-resistant makeup with vibrant yellow floral accents.">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="assets/gallary neck.png" alt="Pre-Wedding Glow" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-gold text-[0.6rem] uppercase tracking-widest font-bold mb-1">Reception & Events</span>
+                        <h3 class="text-white text-xl font-playfair font-semibold">Pre-Wedding Glow</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: Gallery & Filters Section -->
+
+    <!-- BEGIN: Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[110] bg-black/95 hidden flex flex-col justify-center items-center p-4">
+        <!-- Close Button -->
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gold transition-colors focus:outline-none" aria-label="Close Lightbox">
+            <span class="material-symbols-outlined !text-4xl">close</span>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50" aria-label="Previous Image">
+            <span class="material-symbols-outlined !text-3xl md:!text-5xl">chevron_left</span>
+        </button>
+        <button id="lightbox-next" class="absolute right-4 md:right-8 text-white hover:text-brand-gold transition-colors focus:outline-none z-50" aria-label="Next Image">
+            <span class="material-symbols-outlined !text-3xl md:!text-5xl">chevron_right</span>
+        </button>
+
+        <!-- Main Media Container -->
+        <div class="max-w-4xl max-h-[70vh] flex justify-center items-center relative select-none">
+            <img id="lightbox-img" class="max-w-full max-h-[70vh] object-contain shadow-2xl" src="" alt="" />
+        </div>
+
+        <!-- Text/Metadata Info -->
+        <div class="mt-8 text-center max-w-2xl px-4">
+            <span id="lightbox-category" class="text-brand-gold text-xs uppercase tracking-widest font-bold block mb-2"></span>
+            <h2 id="lightbox-title" class="text-white text-2xl md:text-3xl font-playfair mb-3"></h2>
+            <p id="lightbox-desc" class="text-gray-300 text-sm md:text-base font-light leading-relaxed"></p>
+        </div>
+    </div>
+    <!-- END: Lightbox Modal -->
+
+    <!-- BEGIN: Book CTA Section -->
+    <section class="py-16 md:py-24 bg-brand-burgundy text-white text-center">
+        <div class="container mx-auto px-4 md:px-12">
+            <h2 class="text-4xl md:text-5xl mb-6 font-playfair">Ready to Define Your Signature Look?</h2>
+            <p class="text-brand-gold/80 text-sm md:text-base max-w-xl mx-auto mb-10 font-light leading-relaxed">
+                Connect with Feeniya Nizan today to secure your wedding or celebration date. Let us bring your dream bridal vision to life.
+            </p>
+            <a class="bg-brand-gold text-brand-burgundy hover:bg-white hover:text-brand-burgundy px-12 py-4 text-xs font-bold uppercase tracking-widest transition shadow-xl inline-block"
+                href="index.html#contact">Book Your Consultation</a>
+        </div>
+    </section>
+    <!-- END: Book CTA Section -->
+
+    <!-- BEGIN: Footer -->
+    <footer class="bg-brand-burgundy text-white pt-12 md:pt-20 pb-12 border-t border-white/5">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between text-[0.65rem] text-gray-400 font-medium tracking-widest">
+                <p class="">© 2024 TEAM N BY FEENIYA NIZAN. ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <a class="hover:text-brand-gold transition-colors uppercase" href="index.html#home">Home</a>
+                    <a class="hover:text-brand-gold transition-colors uppercase" href="index.html#about">About</a>
+                    <a class="hover:text-brand-gold transition-colors uppercase" href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: Footer -->
+
+    <script>
+        // Sticky Header Logic
+        window.addEventListener('scroll', function () {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled', 'py-3', 'md:py-4');
+                nav.classList.remove('py-6', 'md:py-7');
+            } else {
+                nav.classList.remove('nav-scrolled', 'py-3', 'md:py-4');
+                nav.classList.add('py-6', 'md:py-7');
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIconPath = document.getElementById('hamburger-icon-path');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-y-0');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-y-0');
+                mobileMenu.classList.add('-translate-y-full');
+                hamburgerIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
+                hamburgerIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('translate-y-0')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Portfolio Filter Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(b => b.classList.remove('active'));
+                // Add active to current
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Lightbox Modal Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        const lightboxCategory = document.getElementById('lightbox-category');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        let currentActiveItems = [];
+        let currentIndex = 0;
+
+        // Collect items that are currently visible (based on active filter)
+        function updateActiveItems() {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            currentActiveItems = Array.from(galleryItems).filter(item => {
+                const category = item.getAttribute('data-category');
+                return activeFilter === 'all' || category === activeFilter;
+            });
+        }
+
+        function showLightboxItem(index) {
+            if (index < 0 || index >= currentActiveItems.length) return;
+            currentIndex = index;
+            const item = currentActiveItems[currentIndex];
+            const imgUrl = item.querySelector('img').getAttribute('src');
+            const title = item.getAttribute('data-title');
+            const desc = item.getAttribute('data-desc');
+            const categoryText = item.querySelector('span') ? item.querySelector('span').textContent : '';
+
+            lightboxImg.setAttribute('src', imgUrl);
+            lightboxTitle.textContent = title;
+            lightboxDesc.textContent = desc;
+            lightboxCategory.textContent = categoryText;
+        }
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                updateActiveItems();
+                const index = currentActiveItems.indexOf(item);
+                if (index !== -1) {
+                    showLightboxItem(index);
+                    lightbox.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                }
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            lightboxImg.setAttribute('src', '');
+        }
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        // Close on clicking overlay (outside image and buttons)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Prev/Next Navigation
+        if (lightboxPrev) {
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIndex = currentIndex - 1;
+                if (nextIndex < 0) nextIndex = currentActiveItems.length - 1;
+                showLightboxItem(nextIndex);
+            });
+        }
+
+        if (lightboxNext) {
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= currentActiveItems.length) nextIndex = 0;
+                showLightboxItem(nextIndex);
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                lightboxPrev.click();
+            } else if (e.key === 'ArrowRight') {
+                lightboxNext.click();
+            }
+        });
+    </script>
+    <a aria-label="Chat on WhatsApp"
+        class="whatsapp-float"
+        href="https://wa.me/919645424281" target="_blank"><svg class="w-7 h-7 fill-white" viewbox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+            </path>
+        </svg></a>
+</body>
+
+</html>
